@@ -44,9 +44,9 @@ app.post("/api/login/",async(request,response)=>{
        console.log(dbuser.password);
        if(isPasswordMatched===true){
         const payload={
-            name:name,
+            username:name,
         };
-        const jwtToken=jwt.sign(payload,"My-secret");
+        const jwtToken=jwt.sign(payload,"My-secsret");
         response.send({jwtToken});
         console.log(jwtToken)
        }
